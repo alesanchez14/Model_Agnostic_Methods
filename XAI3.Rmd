@@ -166,3 +166,23 @@ for(c in names(results)[1:4])
 
 ```
 
+
+```{r}
+p_1 <- ggplot(sampled, aes(x=bedrooms, y=results$bedrooms)) + geom_line() + geom_rug(alpha = 0.1, sides = "b") + ylab("Prediction") + xlab("Bedrooms")
+p_2 <- ggplot(sampled, aes(x=bathrooms, y=results$bathrooms)) + geom_line() + geom_rug(alpha = 0.1, sides = "b")+ xlab("Bathrooms")
+p_3 <- ggplot(sampled, aes(x=sqft_living, y=results$sqft_living)) + geom_line() + geom_rug(alpha = 0.1, sides = "b")+ xlab("Sqft Living")
+p_4 <- ggplot(sampled, aes(x=floors, y=results$floors)) + geom_line() + geom_rug(alpha = 0.1, sides = "b")+ xlab("Floors")
+subplot(p_1,p_2,p_3,p_4, shareX = FALSE, titleX = TRUE)
+```
+
+#### Spanish
+
+Sorprendentemente observamos que las predicciones del precio indican que cuando hay dos habitaciones aumenta, en cambio cuando hay 3 o 4 disminuye, vemos también que con 6 habitaciones vuelve a aumentar. Cabe destacar que la distribución de las muestras es muy espaciada.
+
+En cuanto al número de baños vemos que conforme aumenta el número de baños aumenta la predicción del precio, lo mismo ocurre con los metros cuadrados y con las plantas.
+
+#### English
+
+Surprisingly, we observe that the price predictions indicate that when there are two rooms it increases, but when there are 3 or 4 rooms it decreases, and we also see that with 6 rooms it increases again. It is worth noting that the distribution of the samples is very spaced out.
+
+As for the number of bathrooms, we see that as the number of bathrooms increases, the price prediction increases, as do the square metres and the floors.
