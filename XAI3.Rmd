@@ -67,7 +67,7 @@ p_4 <- ggplot(days_since, aes(x=windspeed, y=results$windspeed)) + geom_line() +
 subplot(p_1,p_2,p_3,p_4, shareY = TRUE, shareX = FALSE, titleX = TRUE)
 ```
 
-####Spanish
+#### Spanish
 
 Las predicciones de alquileres de bicicletas han aumentado considerablemente desde el año 2011. 
 Se observa que cuando las temperaturas rondan los 15-25 grados centígrados las predicciones aumentan. 
@@ -115,6 +115,19 @@ for(i in 1:nrow(th)){
 }
 
 ```
+
+
+```{r}
+ggplot(th, aes(x=temp, y=hum)) + geom_tile(aes(fill = p, width = 10, height = 15)) + geom_rug(alpha = 0.01) + xlab("Temperature") + ylab("Humidity") + scale_fill_gradient(name = "Number of bikes")
+```
+
+#### Spanish
+
+Observando el gráfico de dependencia parcial, las predicciones del número de bicicletas alquiladas aumentan cuando la temperatura ronda los 15-20 grados centígrados y cuando nos encontramos en una situción de baja humedad. 
+
+#### English
+
+Looking at the partial dependence graph, the predictions of the number of rented bicycles increase when the temperature is around 15-20 degrees Celsius and when we are in a situation of low humidity. 
 
 
 ## EXERCISE:
